@@ -1,12 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
 import UserRoutes from "./routes/user.route.js";
+import authRoutes  from "./routes/auth.route.js"
 const app=express();
+app.use(express.json());
 
 import dotenv from "dotenv"
 dotenv.config();
 
- const x=process.env.MONGO_URI;
+ const x="mongodb+srv://codewithnitesh:nBqPcNZ47jQKEXYu@nitesh.xkllnvf.mongodb.net/nitesh"
 mongoose.connect(x)
 .then(()=>{
 
@@ -21,4 +23,5 @@ app.listen(3000,()=>{
 })
 
 app.use("/api/user",UserRoutes);
+app.use("/api/auth",authRoutes);
 

@@ -3,13 +3,14 @@ import { Avatar, Button, Dropdown, Navbar, TextInput } from 'flowbite-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
   const path = useLocation().pathname;
+  const { currentUser } = useSelector((state) => state.user);
   const location = useLocation();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
-  const [currentUser, setCurrentUser] = useState(null); // Mock user state
   const [theme, setTheme] = useState('light'); // Mock theme state
 
   useEffect(() => {
@@ -29,7 +30,8 @@ export default function Header() {
       if (!res.ok) {
         console.log(data.message);
       } else {
-        setCurrentUser(null); // Update user state
+        // Assuming there's a Redux action to handle user sign out
+        dispatch(signOutAction());
       }
     } catch (error) {
       console.log(error.message);
@@ -76,7 +78,7 @@ export default function Header() {
           pill
           onClick={toggleTheme}
         >
-          {theme === 'light' ? <FaSun /> : <FaMoon />}
+          <FaMoon />
         </Button>
         {currentUser ? (
           <Dropdown arrowIcon={false} inline label={<Avatar alt="user" img={currentUser.profilePicture} rounded />}>
@@ -113,3 +115,14 @@ export default function Header() {
     </Navbar>
   );
 }
+
+
+
+
+
+
+
+
+
+
+

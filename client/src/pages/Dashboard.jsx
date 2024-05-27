@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import DashSidebar from './DashSidebar';
-import DashProfile from './DashProfile';
-import DashPosts from './DashPosts';
-import DashUsers from './DashUsers';
-import DashComments from './DashComments';
-import DashboardComp from './DashboardComp';
+import DashSidebar from '../Components/DashSidebar';
+import DashProfile from '../Components/DashProfile';
+import DashPosts from '../Components/DashPosts';
+import DashUsers from '../Components/DashUsers';
+import DashComments from '../Components/DashComments';
+import DashboardComp from '../Components/DashboardComp';
 
 
 

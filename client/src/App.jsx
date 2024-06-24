@@ -15,10 +15,12 @@ import UpdatePost from './pages/UpdatePost.jsx'
 import PostPage from './pages/PostPage.jsx'
 // import Search from './pages/Search.jsx'
 import Search from './pages/Search.jsx'
+import ScrollToTop from './Components/ScrollToTop.jsx'
 
 export default function App() {
   return (
 <BrowserRouter>
+<ScrollToTop/>
 <Header/>
   <Routes>
    <Route path="/" element={<Home/>}/>

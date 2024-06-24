@@ -1,12 +1,12 @@
 import { Button, Spinner } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-// // import CallToAction from '../components/CallToAction';
-// // import CommentSection from '../components/CommentSection';
-// // import PostCard from '../components/PostCard';
+// import CallToAction from '../components/CallToAction';
+// import CommentSection from '../components/CommentSection';
+// import PostCard from '../components/PostCard';
 // import CallToAction from '../Components/CallToAction';
 // import CommentSection from '../Components/CommentSection';
-// import PostCard from '../Components/PostCard';
+import PostCard from '../Components/PostCard';
 import CallToAction from '../Components/CallToAction';
 import CommentSection from '../Components/CommentSection';
 
@@ -91,35 +91,23 @@ export default function PostPage() {
           dangerouslySetInnerHTML={{ __html: post && post.content }}
         ></div>
   
-        <div className='flex flex-col justify-center items-center mb-5'>
-          <h1 className='text-xl mt-5'>Recent articles</h1>
-          <div className='flex flex-wrap gap-5 mt-5 justify-center'>
-            {recentPosts &&
-              recentPosts.map((recentPost) => (
-                <div key={recentPost._id} className='post-card'>
-                  <Link to={`/post/${recentPost.slug}`}>
-                    <img
-                      src={recentPost.image}
-                      alt={recentPost.title}
-                      className='w-full h-48 object-cover'
-                    />
-                    <h2 className='mt-2 text-lg font-semibold'>
-                      {recentPost.title}
-                    </h2>
-                  </Link>
-                </div>
-              ))}
-          </div>
-        </div>
+    
 
      <div className='max-w-4xl mx-auto w-full'>
      
        <CallToAction/>
      
      </div>
-     <CommentSection/>
-
-
+     <CommentSection postId={post._id}/>
+    
+     <div className='flex flex-col justify-center items-center mb-5'>
+     <h1 className='text-xl mt-5'>Recent articles</h1>
+     <div className='flex flex-wrap gap-5 mt-5 justify-center'>
+       {recentPosts &&
+         recentPosts.map((post) => <PostCard key={post._id} post={post} />)}
+     </div>
+   </div>
+         
 
 
 

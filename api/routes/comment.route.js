@@ -1,5 +1,5 @@
-import express from 'express';
-import { verifyToken } from '../utils/verifyUser.js';
+// import express from 'express';
+// import { verifyToken } from '../utils/verifyUser.js';
 import {
   createComment,
   deleteComment,
@@ -9,10 +9,25 @@ import {
   likeComment,
 } from '../controllers/comment.controller.js';
 
-const router = express.Router();
+// const router = express.Router();
 
-router.post('/create', verifyToken, createComment);
-router.get('/getPostComments/:postId', getPostComments);
+// router.post('/create' ,createComment);
+// router.get('/getPostComments/:postId', getPostComments);
+// router.put('/likeComment/:commentId', verifyToken, likeComment);
+// router.put('/editComment/:commentId', verifyToken, editComment);
+// router.delete('/deleteComment/:commentId', verifyToken, deleteComment);
+// router.get('/getcomments', verifyToken, getcomments);
+
+// export default router;
+import express from "express";
+// import { createComment } from "../controllers/comment.controller.js";
+import { verifyToken } from "../utils/verifyUser.js";
+// import { getPostComments } from "../controllers/comment.controller.js";
+
+const router=express.Router();
+
+router.post('/create',verifyToken,createComment);
+router.get('/getPostComments/:postId',getPostComments);
 router.put('/likeComment/:commentId', verifyToken, likeComment);
 router.put('/editComment/:commentId', verifyToken, editComment);
 router.delete('/deleteComment/:commentId', verifyToken, deleteComment);

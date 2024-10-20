@@ -13,7 +13,7 @@ Welcome to the Blog App repository! This application is built using the MERN (Mo
 
 ## Screenshots
 
-![Screenshot 1](https://user-images.githubusercontent.com/67452985/172217325-4378400e-60a0-4364-aadb-89e900886a1c.png)
+![Screenshot 1](https://drive.google.com/drive/quota)
 
 ![Screenshot 2](https://user-images.githubusercontent.com/67452985/172217368-76264e6e-8373-484d-9cd0-3af5920754b1.png)
 
